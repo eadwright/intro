@@ -1,0 +1,53 @@
+<@ classname="intro2.ui.PackageUsedByPage"/>
+
+<include pageClass="intro2.ui.HeaderSubPage" />
+<include pageClass="intro2.ui.NavbarSubPage" />
+
+</FONT></TD>
+</TR>
+</TABLE>
+<!-- =========== END OF NAVBAR =========== -->
+
+<HR>
+<!-- ======== START OF MODULE DATA ======== -->
+<H2>Module: <= this.name />&nbsp;used by&nbsp;<= other.name /></H2>
+
+<!-- ======== CLASS-CLASS SUMMARY ======== -->
+
+<P>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<COLGROUP>
+   <COL width="50%">
+   <COL width="50%">
+</COLGROUP>
+<TR CLASS="TableHeadingColor">
+<TD COLSPAN=3><FONT SIZE="+2">
+<B>Inward References</B></FONT></TD>
+</TR>
+<TR CLASS="TableSubHeadingColor">
+<TD><B>(Package <= this.displayName />)</B></TD><TD><B>Used by (Package <= other.displayName />)</B></TD>
+</TR>
+<packageusagelist>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><hyperlink><CODE><B><= left.name /></B></CODE></hyperlink>
+<include pageClass="intro2.ui.NRSubPage" type="left"/>
+</TD>
+<TD><hyperlink><CODE><B><= right.name /></B></CODE></hyperlink>
+<include pageClass="intro2.ui.NRSubPage" type="right"/>
+</TD>
+</TR>
+</packageusagelist>
+</TABLE>
+&nbsp;
+<P>
+<!-- ========= END OF CLASS-CLASS DATA ========= -->
+
+<include pageClass="intro2.ui.KeySubPage" />
+<include pageClass="intro2.ui.NavbarSubPage" />
+
+</FONT></TD>
+</TR>
+</TABLE>
+<!-- =========== END OF NAVBAR =========== -->
+
+<include pageClass="intro2.ui.FooterSubPage" />

@@ -1,0 +1,26 @@
+<@ classname="intro2.ui.MethodSubPage"/>
+
+<is flag="method.ispublic">public&nbsp;</is>
+<is flag="method.isprotected">protected&nbsp;</is>
+<is flag="method.isprivate">private&nbsp;</is>
+<is flag="method.isabstract">abstract&nbsp;</is>
+<is flag="method.isstatic">static&nbsp;</is>
+<is flag="method.isfinal">final&nbsp;</is>
+<is flag="method.isnative">native&nbsp;</is>
+<is flag="method.isstrict">strict&nbsp;</is>
+<is flag="method.issynchronized">synchronized&nbsp;</is>
+<not flag="method.isconstructor">
+<hyperlink><= returnType.displayType /></hyperlink><= returnType.arrayInfo />&nbsp;</not>
+<= method.displayName />
+(<methodArgList>
+<hyperlink><= type.displayType /></hyperlink><= type.arrayInfo /><= comma />
+</methodArgList>
+)
+<is flag="current.throwsExceptions">
+&nbsp;throws&nbsp;
+<classlist listName="method.exceptions">
+<hyperlink><= displayName /></hyperlink><= comma />
+</classlist>
+</is>
+<is flag="method.isnative">&nbsp;(<FONT CLASS = "NKey">N</FONT>)</is>
+

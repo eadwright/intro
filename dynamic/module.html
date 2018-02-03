@@ -1,0 +1,118 @@
+<@ classname="intro2.ui.ModulePage"/>
+
+<include pageClass="intro2.ui.HeaderSubPage" />
+<include pageClass="intro2.ui.NavbarSubPage" />
+
+SUMMARY:&nbsp;<hyperlink href="subModules">SUB-MODULES</hyperlink>&nbsp;|&nbsp;<hyperlink href="packages">PACKAGES</hyperlink>
+&nbsp;|&nbsp;<hyperlink href="modUsage">MODULE USAGE</hyperlink>&nbsp;
+</FONT></TD>
+</TR>
+</TABLE>
+<!-- =========== END OF NAVBAR =========== -->
+
+<HR>
+<!-- ======== START OF MODULE DATA ======== -->
+<H2>Module: <= this.name /></H2>
+
+<ModuleTree>
+<loop counterName="up"><UL></loop>
+<LI type="circle"><hyperlink><= current.name /></hyperlink>
+<loop counterName="down"></UL></loop>
+</ModuleTree>
+
+<P><= this.description />
+<include pageClass="intro2.ui.NRSubPage" type="real"/>
+<P>
+
+<exists flag="subModules">
+<!-- ======== SUB-MODULE SUMMARY ======== -->
+
+<A NAME="submodule"></A>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR CLASS="TableHeadingColor">
+<TD><FONT SIZE="+2">
+<B>Sub-Module Summary</B></FONT></TD>
+</TR>
+<modulelist>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><hyperlink><CODE><B><= current.name /></B></CODE></hyperlink>
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<= current.description />
+<include pageClass="intro2.ui.NRSubPage" type="real"/>
+</TD>
+</TR>
+</modulelist>
+</TABLE>
+<P>
+</exists>
+
+<exists flag="packages">
+<!-- ======== PACKAGE SUMMARY ======== -->
+
+<A NAME="packages"></A>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR CLASS="TableHeadingColor">
+<TD><FONT SIZE="+2">
+<B>Package Summary</B></FONT></TD>
+</TR>
+<TR CLASS="TableSubHeadingColor">
+<TD><B>Package</B></TD>
+</TR>
+<packagelist>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><hyperlink><CODE><B><= current.displayName /></B></CODE></hyperlink>
+<include pageClass="intro2.ui.NRSubPage" type="current"/>
+</TD>
+</TR>
+</packagelist>
+</TABLE>
+&nbsp;<P>
+</exists>
+
+<exists flag="modUsage">
+<!-- ======== MODULE USAGE SUMMARY ======== -->
+<A NAME="module_usage"></A>
+<H2>Usage</H2>
+<P>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<COLGROUP>
+   <COL width="70%">
+   <COL width="15%">
+   <COL width="15%">
+</COLGROUP>
+<TR CLASS="TableHeadingColor">
+<TD COLSPAN=3><FONT SIZE="+2">
+<B>Module Usage Summary</B></FONT></TD>
+</TR>
+<TR CLASS="TableSubHeadingColor">
+<TD><B>Module</B></TD><TD><B>Outward</B></TD><TD><B>Inward</B></TD>
+</TR>
+<moduleusagesummarylist>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><CODE><B><= current.name /></B></CODE>
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<= current.description />
+</TD>
+<TD><hyperlink2 href="outwardref">Yes</hyperlink2>&nbsp;</TD>
+<TD><hyperlink2 href="inwardref">Yes</hyperlink2>&nbsp;</TD>
+</TR>
+</moduleusagesummarylist>
+</TABLE>
+&nbsp;
+<P>
+</exists>
+
+<!-- ========= END OF MODULE DATA ========= -->
+
+<include pageClass="intro2.ui.KeySubPage" />
+<include pageClass="intro2.ui.NavbarSubPage" />
+
+SUMMARY:&nbsp;<A HREF="#submodules">SUB-MODULES</A>&nbsp;|&nbsp;<A HREF="#packages">PACKAGES</A>
+&nbsp;|&nbsp;<hyperlink href="modUsage">MODULE USAGE</hyperlink>&nbsp;
+</FONT></TD>
+</TR>
+</TABLE>
+<!-- =========== END OF NAVBAR =========== -->
+
+<include pageClass="intro2.ui.FooterSubPage" />

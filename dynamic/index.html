@@ -1,0 +1,73 @@
+<@ classname="intro2.ui.IndexPage"/>
+
+<include pageClass="intro2.ui.HeaderSubPage" />
+<include pageClass="intro2.ui.NavbarSubPage" />
+
+SUMMARY:&nbsp;<A HREF="#modules">MODULES</A>&nbsp;|&nbsp;<A HREF="#libraries">LIBRARIES</A>
+&nbsp;
+</FONT></TD>
+</TR>
+</TABLE>
+<!-- =========== END OF NAVBAR =========== -->
+
+<HR>
+<!-- ======== START OF PROJECT DATA ======== -->
+<H2>Project: <= this.name /></H2>
+<P><= this.description /><P>
+
+<!-- ======== MODULE SUMMARY ======== -->
+
+<A NAME="modules"><!-- --></A>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR CLASS="TableHeadingColor">
+<TD><FONT SIZE="+2">
+<B>Module Summary</B></FONT></TD>
+</TR>
+</TABLE>
+<P>
+<ModuleTree>
+<loop counterName="up"><UL></loop>
+<LI type="circle"><hyperlink><= current.name /></hyperlink>
+&nbsp;( <= current.description /> )
+<include pageClass="intro2.ui.NRSubPage" type="real"/>
+<loop counterName="down"></UL></loop>
+</ModuleTree>
+<P>
+
+<!-- ======== LIBRARY SUMMARY ======== -->
+
+<A NAME="libraries"><!-- --></A>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<COLGROUP>
+   <COL width="30%">
+   <COL width="70%">
+<TR CLASS="TableHeadingColor">
+<TD COLSPAN=2><FONT SIZE="+2">
+<B>Library Summary</B></FONT></TD>
+</TR>
+<TR CLASS="TableSubHeadingColor">
+<TD><B>Description</B></TD><TD><B>Path</B></TD>
+</TR>
+<LibraryList>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><= current.name /></TD>
+<TD><CODE><= current.libpath /></CODE>
+</TR>
+</LibraryList>
+</TABLE>
+&nbsp;
+<P>
+
+<!-- ========= END OF PROJECT DATA ========= -->
+
+<include pageClass="intro2.ui.KeySubPage" />
+<include pageClass="intro2.ui.NavbarSubPage" />
+
+SUMMARY:&nbsp;<A HREF="#modules">MODULES</A>&nbsp;|&nbsp;<A HREF="#libraries">LIBRARIES</A>
+&nbsp;
+</FONT></TD>
+</TR>
+</TABLE>
+<!-- =========== END OF NAVBAR =========== -->
+
+<include pageClass="intro2.ui.FooterSubPage" />

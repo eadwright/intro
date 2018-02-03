@@ -1,0 +1,140 @@
+<@ classname="intro2.ui.ClassPage"/>
+
+<include pageClass="intro2.ui.HeaderSubPage" />
+<include pageClass="intro2.ui.NavbarSubPage" />
+
+DETAILS:&nbsp;<hyperlink href="fields">FIELDS</hyperlink>&nbsp;|&nbsp;<hyperlink href="methods">METHODS</hyperlink>
+&nbsp;|&nbsp;<hyperlink href="innerClasses">INNER-CLASSES</hyperlink>&nbsp;
+</FONT></TD>
+</TR>
+</TABLE>
+<!-- =========== END OF NAVBAR =========== -->
+<HR>
+<!-- ======== START OF CLASS DATA ======== -->
+<H2><FONT SIZE="-1"><= this.displayPackage /></FONT><br>
+<is flag="this.isinterface">Interface</is><else>Class</else>&nbsp;<= this.shortName /></H2>
+
+<is flag="this.ispublic">public&nbsp;</is>
+<not flag="this.isinterface"><is flag="this.isabstract">abstract&nbsp</is></not>
+<is flag="this.isfinal">final&nbsp;</is>
+<is flag="this.isinterface">interface</is><else>class</else>
+&nbsp;<= this.shortName />
+<getclass id="this.superclassid" />
+<not flag="this.interface">
+<exists flag="displayName">&nbsp;extends&nbsp;<hyperlink><= displayName /></hyperlink></exists>
+</not><is flag="this.implementsinterfaces">&nbsp;implements&nbsp;
+<classList listName="this.interfaceids"><hyperlink><= displayName /></hyperlink><= comma /></classlist></is>
+<br>
+<include pageClass="intro2.ui.NRSubPage" type="this"/>
+<is flag="this.isdeprecated"><b>Deprecated</b>&nbsp;</is>
+
+<P>
+<ClassTree>
+<loop counterName="up"><UL></loop>
+<LI type="circle"><hyperlink><= name /></hyperlink>
+<loop counterName="down"></UL></loop>
+</ClassTree>
+<P>
+
+<is flag="this.isInnerClass">
+Inner&nbsp;<is flag="this.isinterface">interface</is><else>class</else>&nbsp;defined as:
+<assign from="this.innerClassSelfReference" to="innerref" />
+<include pageClass="intro2.ui.InnerClassSubPage" /><br>
+<getclass id="innerref.targetclassid" />
+<exists flag="ci">
+<is flag="ci.interface">Outer interface:&nbsp;</is>
+<else>Outer class:&nbsp;</else>
+</exists>
+<else>Outer class:&nbsp;</else>
+<hyperlink><= displayName /></hyperlink><br>
+</is>
+
+<p>
+<exists flag="this.fieldoffsets">
+<!-- ======== FIELD SUMMARY ======== -->
+
+<A NAME="fields"></A>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR CLASS="TableHeadingColor">
+<TD><FONT SIZE="+2">
+<B>Fields</B></FONT></TD>
+</TR>
+<fieldList>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD>
+<= current.name /><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<is flag="current.ispublic">public&nbsp;</is>
+<is flag="current.isprotected">protected&nbsp;</is>
+<is flag="current.isprivate">private&nbsp;</is>
+<is flag="current.isstatic">static&nbsp;</is>
+<is flag="current.isfinal">final&nbsp;</is>
+<hyperlink><= type.type /></hyperlink><= type.arrayInfo />&nbsp;
+<= current.name />
+<exists flag="current.constantValue">
+&nbsp;=&nbsp;<= current.constantValue />
+</exists>
+</TD>
+</TR>
+</fieldList>
+</TABLE>
+<P>
+</exists>
+
+<exists flag="this.methodoffsets">
+<!-- ======== METHOD SUMMARY ======== -->
+
+<A NAME="methods"></A>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR CLASS="TableHeadingColor">
+<TD><FONT SIZE="+2">
+<B>Methods</B></FONT></TD>
+</TR>
+<methodList>
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD>
+<= current.displayName /><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<assign from="current" to="method" />
+<include pageClass="intro2.ui.MethodSubPage" />
+</TD>
+</TR>
+</methodList>
+</TABLE>
+<P>
+</exists>
+
+<is flag="this.hasInnerClasses">
+<!-- ======== INNER CLASS SUMMARY ======== -->
+
+<A NAME="innerClasses"></A>
+<TABLE BORDER="1" CELLPADDING="3" CELLSPACING="0" WIDTH="100%">
+<TR CLASS="TableHeadingColor">
+<TD><FONT SIZE="+2">
+<B>Inner Classes</B></FONT></TD>
+</TR>
+<innerClassListInit/>
+<classlist listName="innerClasses">
+<TR BGCOLOR="white" CLASS="TableRowColor">
+<TD><include pageClass="intro2.ui.InnerClassSubPage" /><br>
+<hyperlink><CODE><B><= displayName /></B></CODE></hyperlink>
+<include pageClass="intro2.ui.NRSubPage" type="ci"/></TD>
+</TR>
+</classlist>
+</TABLE>
+<P>
+</is>
+
+<!-- ========= END OF CLASS DATA ========= -->
+
+<include pageClass="intro2.ui.KeySubPage" />
+<include pageClass="intro2.ui.NavbarSubPage" />
+
+SUMMARY:&nbsp;<hyperlink href="subPackages">SUB-PACKAGES</hyperlink>&nbsp;|&nbsp;<hyperlink href="interfaces">INTERFACES</hyperlink>
+&nbsp;|&nbsp;<hyperlink href="classes">CLASSES</hyperlink>&nbsp;
+</FONT></TD>
+</TR>
+</TABLE>
+<!-- =========== END OF NAVBAR =========== -->
+
+<include pageClass="intro2.ui.FooterSubPage" />
